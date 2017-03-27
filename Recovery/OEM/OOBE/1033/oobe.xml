@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FirstExperience>
+  <oobe>
+     <defaults>
+      <location>61</location>
+      <locale>1030</locale>
+      <keyboard>0406:00000406</keyboard>
+      <timezone>Romance Standard Time</timezone>
+    </defaults>
+    <hidSetup>
+      <title>Pen Setup</title>
+      <accessoryImagePath>C:\Windows\System32\oobe\info\Default\1033\PenPairing_en-US.png</accessoryImagePath>
+      <accessoryErrorImagePath>C:\Windows\System32\oobe\info\Default\1033\PenError_en-US.png</accessoryErrorImagePath>
+      <accessoryText>Press and hold the top button for 5 seconds to enter pairing mode.</accessoryText>
+      <accessoryErrorText>Pairing was unsuccessful. To pair your pen later, please go to surface.com/support</accessoryErrorText>
+      <accessorySuccessImage>C:\Windows\System32\oobe\info\Default\1033\PenSuccess_en-US.png</accessorySuccessImage>
+      <accessorySuccessText>Pairing was successful! (Try these features later) Single-click to OneNote Double-click to Screenshot Click and hold to activate Cortana* *Cortana available in selected global markets</accessorySuccessText>
+    </hidSetup>
+  </oobe>
+</FirstExperience>

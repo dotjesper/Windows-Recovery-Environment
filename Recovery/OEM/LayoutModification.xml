@@ -1,0 +1,61 @@
+<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification" xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout">
+	<LayoutOptions StartTileGroupCellWidth="8" />
+	<DefaultLayoutOverride>
+		<StartLayoutCollection>
+			<defaultlayout:StartLayout GroupCellWidth="8">
+				<start:Group Name="Life at a glance">
+					<start:Tile Size="4x4" Column="4" Row="0" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.calendar" />
+					<start:Tile Size="4x4" Column="0" Row="4" AppUserModelID="Microsoft.BingWeather_8wekyb3d8bbwe!App" />
+					<start:Tile Size="2x2" Column="6" Row="6" AppUserModelID="Facebook.Facebook_8xx8rvfyw5nnt!App" />
+					<start:Tile Size="4x2" Column="0" Row="8" AppUserModelID="Microsoft.BingNews_8wekyb3d8bbwe!AppexNews" />
+					<start:Tile Size="4x2" Column="0" Row="0" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.mail" />
+					<start:Tile Size="2x2" Column="4" Row="6" AppUserModelID="B-sideSoftware.Tweetium_eq7kkbyjh4j3c!App" />
+					<start:Tile Size="4x2" Column="4" Row="4" AppUserModelID="Microsoft.Windows.Photos_8wekyb3d8bbwe!App" />
+					<start:Tile Size="1x1" Column="7" Row="9" AppUserModelID="Microsoft.WindowsPhone_8wekyb3d8bbwe!CompanionApp.App" />
+					<start:Tile Size="1x1" Column="6" Row="8" AppUserModelID="microsoft.microsoftskydrive_8wekyb3d8bbwe!App" />
+					<start:Tile Size="4x2" Column="0" Row="2" AppUserModelID="Microsoft.People_8wekyb3d8bbwe!x4c7a3b7dy2188y46d4ya362y19ac5a5805e5x" />
+					<start:Tile Size="2x2" Column="4" Row="8" AppUserModelID="Microsoft.WindowsMaps_8wekyb3d8bbwe!App" />
+					<start:Tile Size="1x1" Column="6" Row="9" AppUserModelID="Microsoft.MicrosoftHoloLens_8wekyb3d8bbwe!App" />
+					<start:Tile Size="1x1" Column="7" Row="8" AppUserModelID="D5BA6BCD.OpenLiveWriter_7g8mfyn71hpbp!OpenLiveWriter" />
+				</start:Group>
+				<start:Group Name="Microsoft Office">
+					<start:Tile Size="1x1" Column="5" Row="0" AppUserModelID="Microsoft.Office.OneNote_8wekyb3d8bbwe!microsoft.onenoteim" />
+					<start:Tile Size="1x1" Column="6" Row="0" AppUserModelID="Microsoft.Office.Delve_8wekyb3d8bbwe!App" />
+					<start:Tile Size="1x1" Column="4" Row="0" AppUserModelID="Microsoft.Office.PowerPoint_8wekyb3d8bbwe!microsoft.pptim" />
+					<start:Tile Size="1x1" Column="3" Row="0" AppUserModelID="Microsoft.Office.Excel_8wekyb3d8bbwe!microsoft.excel" />
+					<start:Tile Size="1x1" Column="7" Row="0" AppUserModelID="Microsoft.Office.Sway_8wekyb3d8bbwe!Microsoft.Sway" />
+					<start:Tile Size="1x1" Column="2" Row="0" AppUserModelID="Microsoft.Office.Word_8wekyb3d8bbwe!microsoft.word" />
+					<start:DesktopApplicationTile Size="1x1" Column="3" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Excel 2016.lnk" />
+					<start:DesktopApplicationTile Size="1x1" Column="6" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Skype for Business 2016.lnk" />
+					<start:DesktopApplicationTile Size="1x1" Column="5" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\OneNote 2016.lnk" />
+					<start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Outlook 2016.lnk" />
+					<start:DesktopApplicationTile Size="1x1" Column="4" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\PowerPoint 2016.lnk" />
+					<start:DesktopApplicationTile Size="1x1" Column="2" Row="1" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Word 2016.lnk" />
+				</start:Group>
+				<start:Group Name="Play and explore">
+					<start:Tile Size="2x2" Column="0" Row="2" AppUserModelID="Microsoft.ZuneVideo_8wekyb3d8bbwe!Microsoft.ZuneVideo" />
+					<start:Tile Size="2x2" Column="0" Row="0" AppUserModelID="Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic" />
+					<start:Tile Size="4x2" Column="2" Row="0" AppUserModelID="4DF9E0F8.Netflix_mcm4njqhnhss8!Netflix.App" />
+					<start:Tile Size="2x2" Column="6" Row="2" AppUserModelID="C1C99D54.DRTV_m4txmey7cyr66!App" />
+					<start:Tile Size="1x1" Column="5" Row="2" AppUserModelID="Microsoft.XboxApp_8wekyb3d8bbwe!Microsoft.XboxApp" />
+					<start:Tile Size="2x2" Column="2" Row="2" AppUserModelID="CAF9E577.Plex_aam28m9va5cke!App" />
+					<start:Tile Size="1x1" Column="6" Row="1" AppUserModelID="Microsoft.Channel9_8wekyb3d8bbwe!App" />
+				</start:Group>
+				<start:Group Name="Windows Insight">
+					<start:Tile Size="4x2" Column="2" Row="0" AppUserModelID="Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe!App" />
+					<start:Tile Size="2x2" Column="6" Row="0" AppUserModelID="Windows.ContactSupport_cw5n1h2txyewy!App" />
+					<start:Tile Size="2x2" Column="0" Row="0" AppUserModelID="Microsoft.Getstarted_8wekyb3d8bbwe!App" />
+				</start:Group>
+			</defaultlayout:StartLayout>
+		</StartLayoutCollection>
+	</DefaultLayoutOverride>
+	<CustomTaskbarLayoutCollection PinListPlacement="Replace">
+		<defaultlayout:TaskbarLayout>
+			<taskbar:TaskbarPinList>
+				<taskbar:UWA AppUserModelID="Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge" />
+				<taskbar:UWA AppUserModelID="Microsoft.WindowsStore_8wekyb3d8bbwe!App" />
+				<taskbar:DesktopApp DesktopApplicationLinkPath="%USERPROFILE%\OneDrive\AppFiles\npp\notepad++.lnk" />
+			</taskbar:TaskbarPinList>
+		</defaultlayout:TaskbarLayout>
+	</CustomTaskbarLayoutCollection>
+</LayoutModificationTemplate>

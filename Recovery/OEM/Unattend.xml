@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created 03/19/2017 21:22:20 -->
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+	<settings pass="windowsPE">
+		<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<SetupUILanguage>
+				<UILanguage>en-US</UILanguage>
+			</SetupUILanguage>
+			<InputLocale>da-DK</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UILanguageFallback>en-US;da-DK</UILanguageFallback>
+			<UserLocale>en-US;da-DK</UserLocale>
+		</component>
+	</settings>
+	<settings pass="specialize">
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
+			<ComputerName>*</ComputerName>
+			<RegisteredOrganization>Windows User</RegisteredOrganization>
+			<RegisteredOwner>Windows User</RegisteredOwner>
+			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
+			<TimeZone>Romance Standard Time</TimeZone>
+		</component>
+		<component name="Microsoft-Windows-IE-InternetExplorer" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<Home_Page>about:tabs</Home_Page>
+			<FilterLevel>High</FilterLevel> 
+			<DisableFirstRunWizard>true</DisableFirstRunWizard>
+		</component>
+		<component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<RunSynchronous>
+				<RunSynchronousCommand wcm:action="add">
+					<Description>Disable Windows Consumer Features</Description>
+					<Order>1</Order>
+					<Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\CloudContent" /t REG_DWORD /v DisableWindowsConsumerFeatures /d 1 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Description>Disable First Logon Animation</Description>
+					<Order>2</Order>
+					<Path>reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /t REG_DWORD /v EnableFirstLogonAnimation /d 0 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Description>Enable LSA protection of Credentials</Description>
+					<Order>3</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /t REG_DWORD /v RunAsPPL /d 1 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Description>Show "My Computer" Icon on Desktop</Description>
+					<Order>4</Order>
+					<Path>reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /t REG_DWORD /v {20D04FE0-3AEA-1069-A2D8-08002B30309D} /d 0 /f</Path>
+				</RunSynchronousCommand>                
+			</RunSynchronous>
+		</component>
+	</settings>
+	<settings pass="oobeSystem">
+		<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<InputLocale>en-US;da-DK</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UILanguageFallback>en-US;da-DK</UILanguageFallback>
+			<UserLocale>da-DK</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<OOBE>
+				<HideEULAPage>true</HideEULAPage>
+				<HideOEMRegistrationScreen>false</HideOEMRegistrationScreen>
+				<HideOnlineAccountScreens>false</HideOnlineAccountScreens>
+				<HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
+				<ProtectYourPC>1</ProtectYourPC>
+			</OOBE>
+			<RegisteredOrganization>Windows User</RegisteredOrganization>
+			<RegisteredOwner>Windows User</RegisteredOwner>
+			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
+			<TimeZone>Romance Standard Time</TimeZone>
+		</component>
+	</settings>
+</unattend>

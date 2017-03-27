@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FirstExperience>
+  <oobe>
+    <defaults>
+      <location>61</location>
+      <locale>1030</locale>
+      <keyboard>0406:00000406</keyboard>
+      <timezone>Romance Standard Time</timezone>
+    </defaults>
+    <hidSetup>
+      <title>Penkonfiguration</title>
+      <accessoryImagePath>C:\Windows\System32\oobe\info\Default\1030\PenPairing_da-DK.png</accessoryImagePath>
+      <accessoryErrorImagePath>C:\Windows\System32\oobe\info\Default\1030\PenError_da-DK.png</accessoryErrorImagePath>
+      <accessoryText>Tryk på og hold topknappen nede i 5 sekunder for at aktivere parringstilstand.</accessoryText>
+      <accessoryErrorText>Parringen mislykkedes. Hvis du vil parre din pen senere, skal du gå til surface.com/support</accessoryErrorText>
+      <accessorySuccessImage>C:\Windows\System32\oobe\info\Default\1030\PenSuccess_da-DK.png</accessorySuccessImage>
+      <accessorySuccessText>Parringen er fuldført! Prøv disse funktioner senere Ét klik åbner OneNote Dobbeltklik tager et skærmbillede Klik og hold knappen nede aktiverer Cortana*  *Cortana er tilgængelig på udvalgte, globale markeder</accessorySuccessText>
+    </hidSetup>
+  </oobe>
+</FirstExperience>
