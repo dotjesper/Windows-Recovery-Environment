@@ -1,5 +1,7 @@
 # Windows Recovery Environment (WinRE)
+
 <// ***Preliminary documentation*** //>
+
 Rather than wiping a device and applying a new system image when you need to change configuration, you can reset the device to an original state. This project aim to return the device its original state, by maintaining vital settings (Computer name & Configuration Settings etc.)
 
 ### About Windows Recovery Environment (WinRE)
@@ -14,12 +16,14 @@ Questions or comments can be submitted to the [repository issue tracker](https:/
 <//>
 
 **Folder structure**
+
 <//>
 
 **Scripts and tools**
+
 Scripts for aiding with the solution can be found in the [Scripts](./Scripts) folder. Scripts available for use:
- - deploy.cmd
- - unattend.xml.ps1
+ - Deploy.cmd
+ - Unattend.xml.ps1
 
 ### Getting started
 <//>
@@ -38,6 +42,7 @@ See the [Unblock-File command's documentation](https://technet.microsoft.com/en-
 
 ### Security considerations
 Protecting the Recovery folder
+
 ```
    attrib.exe +S +H +I "C:\Recovery\*.*" /s /d
    icacls.exe C:\Recovery\Customizations /inheritance:r /T
@@ -49,6 +54,7 @@ Protecting the Recovery folder
 ```
 
 ### Configure the system to start Windows RE next time the system starts up
+
 ```
 :: Displays Windows RE and system reset configuration
    reagentc.exe /info
@@ -61,5 +67,7 @@ Protecting the Recovery folder
 See [LICENSE](./LICENSE.md).
 
 ### References
+
 [Windows Recovery Environment (Windows RE)](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+
 [ResetConfig XML reference](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/resetconfig-xml-reference-s14)
