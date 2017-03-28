@@ -34,7 +34,7 @@ Download the [current code]( https://github.com/dotjesper/Windows-Recovery-Envir
 
 If the downloaded zip file is not unblocked before extracting it, then all the individual files that were in the zip file will have to be unblocked. You will need to run the following command:
 
-```
+``` PowerShell
 Get-ChildItem -Path '.\Windows-Recovery-Environment' -Recurse -Include '*.*' | Unblock-File -Verbose
 ```
 
@@ -43,19 +43,19 @@ See the [Unblock-File command's documentation](https://technet.microsoft.com/en-
 ### Security considerations
 Protecting the Recovery folder
 
-```
-   attrib.exe +S +H +I "C:\Recovery\*.*" /s /d
-   icacls.exe C:\Recovery\Customizations /inheritance:r /T
-   icacls.exe C:\Recovery\Customizations /grant:r SYSTEM:(F) /T
-   icacls.exe C:\Recovery\Customizations /grant:r *S-1-5-32-544:(F) /T
-   icacls.exe C:\Recovery\OEM /inheritance:r /T
-   icacls.exe C:\Recovery\OEM /grant:r SYSTEM:(F) /T
-   icacls.exe C:\Recovery\OEM /grant:r *S-1-5-32-544:(F) /T
+``` Batchfile
+attrib.exe +S +H +I "C:\Recovery\*.*" /s /d
+icacls.exe "C:\Recovery\Customizations" /inheritance:r /T
+icacls.exe "C:\Recovery\Customizations" /grant:r SYSTEM:(F) /T
+icacls.exe "C:\Recovery\Customizations" /grant:r *S-1-5-32-544:(F) /T
+icacls.exe "C:\Recovery\OEM" /inheritance:r /T
+icacls.exe "C:\Recovery\OEM" /grant:r SYSTEM:(F) /T
+icacls.exe "C:\Recovery\OEM" /grant:r *S-1-5-32-544:(F) /T
 ```
 
 ### Configure the system to start Windows RE next time the system starts up
 
-```
+``` Batchfile
 :: Displays Windows RE and system reset configuration
    reagentc.exe /info
 
