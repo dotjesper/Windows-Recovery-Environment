@@ -4,12 +4,13 @@
 ::  FactoryReset_AfterImageApply.cmd
 :: ------------------------------------------------------------------------------------
 ::  Created: 11-05-2016 10:24 GMT+1 by @dotJesper
-::  Edited:  15-03-2017 22:49 GMT+1 by @dotJesper
+::  Edited:  11-04-2017 15:29 GMT+1 by @dotJesper
 :: ------------------------------------------------------------------------------------
 ::  Revision 1.0: First edition
 ::  Revision 1.1: Minor changes
 ::  Revision 1.2: Changed %LogFile% from %TargetOS%\Panther\*.log
 ::                to %TargetOSDrive%\Recovery\OEM\LOGS\*.log
+::  Revision 1.3: File Cleanup section added
 :: ------------------------------------------------------------------------------------
 ::  Comments: None
 ::
@@ -77,6 +78,17 @@
    dism.exe /Image:%TargetOSDrive% /Disable-Feature /FeatureName:SMB1Protocol /NoRestart /LogLevel:2 >> %LogFile%
    dism.exe /Image:%TargetOSDrive% /Enable-Feature /FeatureName:Microsoft-Hyper-V-All /NoRestart /LogLevel:2 >> %LogFile%
 
+   ECHO ------------------------------------------------------------------------------- >> %LogFile%
+   ECHO    Cleaning up files and folders >> %LogFile%
+   
+   IF EXIST "%TargetOSDrive%\Recovery" (
+		ATTRIB +H +S "%TargetOSDrive%\Recovery"
+	)
+
+   IF EXIST "%TargetOSDrive%\Intel" (
+		ATTRIB +H "%TargetOSDrive%\Intel"
+	)	
+   
 :: EOF
    ECHO ------------------------------------------------------------------------------- >> %LogFile%
    ECHO    Script ended %DATE% %TIME% >> %LOGFILE%
