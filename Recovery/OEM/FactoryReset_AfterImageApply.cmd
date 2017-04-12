@@ -49,18 +49,18 @@
 
    IF EXIST "%ScriptFolder%Unattend.xml" (
         COPY "%ScriptFolder%Unattend.xml" "%TargetOS%\Panther\Unattend.xml" /y >> %LogFile%
-	) ELSE (
-	    ECHO    %ScriptFolder%Unattend.xml not found >> %LogFile%
-	)
+    ) ELSE (
+        ECHO    %ScriptFolder%Unattend.xml not found >> %LogFile%
+    )
 
    ECHO ------------------------------------------------------------------------------- >> %LogFile%
    ECHO    Copying LayoutModifications.xml >> %LogFile%
 
    IF EXIST "%ScriptFolder%LayoutModification.xml" (
         COPY "%ScriptFolder%LayoutModification.xml" "%TargetOSDrive%\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml" /y >> %LogFile%
-	) ELSE (
-	    ECHO    %ScriptFolder%LayoutModification.xml not found >> %LogFile%
-	)
+    ) ELSE (
+        ECHO    %ScriptFolder%LayoutModification.xml not found >> %LogFile%
+    )
 
    ECHO ------------------------------------------------------------------------------- >> %LogFile%
    ECHO    Copying OOBE.xml files >> %LogFile%
@@ -80,15 +80,19 @@
 
    ECHO ------------------------------------------------------------------------------- >> %LogFile%
    ECHO    Cleaning up files and folders >> %LogFile%
-   
+
    IF EXIST "%TargetOSDrive%\Recovery" (
-		ATTRIB +H +S "%TargetOSDrive%\Recovery"
-	)
+        ATTRIB +S +H "%TargetOSDrive%\Recovery" >> %LogFile%
+    ) ELSE (
+        ECHO    %TargetOSDrive%\Recovery not found >> %LogFile%
+    )
 
    IF EXIST "%TargetOSDrive%\Intel" (
-		ATTRIB +H "%TargetOSDrive%\Intel"
-	)	
-   
+        ATTRIB +H "%TargetOSDrive%\Intel" >> %LogFile%
+    ) ELSE (
+        ECHO    %S%TargetOSDrive%\Intel not found >> %LogFile%
+    )
+
 :: EOF
    ECHO ------------------------------------------------------------------------------- >> %LogFile%
    ECHO    Script ended %DATE% %TIME% >> %LOGFILE%
