@@ -117,7 +117,7 @@ param(
         HelpMessage = "Specify Microsoft Deployment Partner ID."
     )]
     [ValidateNotNullOrEmpty()]
-    [string]$AssignMicrosoftDeploymentPartnerID
+    [string]$MicrosoftDeploymentPartnerID
     
 
 )
@@ -179,6 +179,7 @@ Begin {
   # https://msdn.microsoft.com/en-us/library/windows/hardware/dn934560(v=vs.85).aspx
 
     [bool]$ShowThisPCiconOnDesktop = $True
+    [bool]$HideMCTLink = $False
 
 }
 
@@ -278,10 +279,10 @@ Process {
       # Ref.: https://technet.microsoft.com/en-us/library/dn408187(v=ws.11).aspx
     }
 
-    If ([string]$AssignMicrosoftDeploymentPartnerID -ne "") {
+    If ([string]$MicrosoftDeploymentPartnerID -ne "") {
 
         $RunSynchronousDescription = 'Assign Microsoft Deployment Partner ID'
-        $RunSynchronousPath = 'reg.exe add "HKLM\SOFTWARE\Microsoft\Windows" /t REG_SZ /v DeployID /d ' + $AssignMicrosoftDeploymentPartnerID + ' /f'
+        $RunSynchronousPath = 'reg.exe add "HKLM\SOFTWARE\Microsoft\Windows" /t REG_SZ /v DeployID /d ' + $MicrosoftDeploymentPartnerID + ' /f'
         $RunSynchronousOrder = $RunSynchronousOrder + 1
 
         Add-Content -Path $UnattendFile -Value '				<RunSynchronousCommand wcm:action="add">'
@@ -304,6 +305,21 @@ Process {
         Add-Content -Path $UnattendFile -Value "					<Path>$RunSynchronousPath</Path>"
         Add-Content -Path $UnattendFile -Value '				</RunSynchronousCommand>'
 
+    }
+
+    If ([bool]$HideMCTLink -eq $True) {
+
+        $RunSynchronousDescription = 'Hide MCT Link'
+        $RunSynchronousPath = 'reg.exe add "HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /t REG_DWORD /v HideMCTLink /d 1 /f'
+        $RunSynchronousOrder = $RunSynchronousOrder + 1
+		
+        Add-Content -Path $UnattendFile -Value '				<RunSynchronousCommand wcm:action="add">'
+        Add-Content -Path $UnattendFile -Value "					<Description>$RunSynchronousDescription</Description>"
+        Add-Content -Path $UnattendFile -Value "					<Order>$RunSynchronousOrder</Order>"
+        Add-Content -Path $UnattendFile -Value "					<Path>$RunSynchronousPath</Path>"
+        Add-Content -Path $UnattendFile -Value '				</RunSynchronousCommand>'
+
+		# Ref.: support.microsoft.com/en-us/help/4019198/how-to-disable-windows-creators-update-notice-for-users
     }
 
         Add-Content -Path $UnattendFile -Value '			</RunSynchronous>'
